@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+
 export const SignUp = () => {
     const [name, setName] = useState(""); 
     const [email, setEmail] = useState(""); 
@@ -21,7 +22,8 @@ export const SignUp = () => {
         const response = await axios.post('http://localhost:4000/user/create', { name, email, password, rol });
 
         Swal.fire(response.data.msg, "", "success");
-        navigate("/Home"); 
+        navigate("/app_questionario"); 
+
 
     } catch (error) {  
         console.log(error.message);
